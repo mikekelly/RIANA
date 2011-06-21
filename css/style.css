@@ -1,0 +1,23 @@
+body { 
+	margin: 4em 6em 0 4em; 
+	padding: 0; 
+	background: #fff;
+	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;  
+}
+
+img { 
+	border: 0px solid white; 
+}
+
+p {
+	text-align: justify;
+}
+
+a { 
+	color: #44A; 
+	text-decoration: none; 
+}
+
+a:hover { 
+	text-decoration: underline; 
+}
