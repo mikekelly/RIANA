@@ -1,5 +1,11 @@
-<resource href="/" xmlns:rn="http://a-stable-uri.com/rels/">
-  <motd>{{ motd }}</motd>
-  <link rel="rn:registry" name="media-types" href="/media-types" />
-  <link rel="describedby" href="/readme" />
-</resource>
+{
+  "@href": "/",
+  "@curies": {
+    "rn": "http://a-stable-uri.com/rels/"
+  },
+  "@links": {
+    "rn:registry": { "@name": "media-types", "@href": "/media-types" },
+    "describedby": { "@href": "/readme" }
+  },
+  "motd": "{{ motd }}"
+}

@@ -20,7 +20,7 @@ import datetime
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
 
-DEFAULT_CONTENT_TYPE = "text/plain" # should be "application/hal+xml"
+DEFAULT_CONTENT_TYPE = "text/plain" # should be "application/hal+json"
 
 class MainHandler(webapp.RequestHandler):
   def get(self):
