@@ -22,8 +22,9 @@ from handler import *
 
 
 application = webapp.WSGIApplication([
-						(r'/test', TestHandler),
 						(r'/', MainHandler),
+                        (r'/media-types',MediaTypesHandler),
+                        (r'/readme',ReadmeHandler),
 						(r'/.*', NotFoundHandler)
 					],
 					debug=False)

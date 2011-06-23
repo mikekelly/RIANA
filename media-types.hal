@@ -1,0 +1,5 @@
+<resource href="/media-types" xmlns:rn="http://a-stable-uri.com/rels/">
+  {% for content_type in content_types %}
+    <link rel="rn:content-type" name="{{ content_type.name }}" href="/media-types/{{ content_type.name }}" />
+  {% endfor %}
+</resource>

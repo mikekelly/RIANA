@@ -20,9 +20,28 @@ import datetime
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
 
+DEFAULT_CONTENT_TYPE = "text/plain" # should be "application/hal+xml"
+
 class MainHandler(webapp.RequestHandler):
-	def get(self):
-		self.response.out.write(template.render('index.html', None))
+  def get(self):
+    self.response.headers['Content-Type'] = DEFAULT_CONTENT_TYPE
+    self.response.out.write(template.render('main.hal', {"motd": "Hello World!"}))
+
+class MediaTypesHandler(webapp.RequestHandler):
+    def get(self):
+        self.response.headers['Content-Type'] = DEFAULT_CONTENT_TYPE
+        self.response.out.write(template.render('media-types.hal',{"content_types": [
+          {"name": "application"},
+          {"name": "audio"},
+          {"name": "image"},
+          {"name": "text"},
+          {"name": "video"}
+        ]}))
+
+
+class ReadmeHandler(webapp.RequestHandler):
+  def get(self):
+    self.response.out.write(template.render('readme.html',None))
 
 class NotFoundHandler(webapp.RequestHandler):
 	def get(self):
